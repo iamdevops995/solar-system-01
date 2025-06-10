@@ -1,6 +1,6 @@
 name: ASCII Generator Artwork
 on: push
-jobs
+jobs:
   artwork_job:
     runs-on: ubuntu-latest
     steps:
