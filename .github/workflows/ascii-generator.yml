@@ -11,7 +11,7 @@ jobs:
     - name: Generator artwork
       run: cowsay -f dragon "I saw the cute dog" >> dragon.txt
     - name: Verify the File content
-      run: grep -i 'dragon' dragon.txt
+      run: grep -i "dragon" dragon.txt
     - name: View the content
       run: cat dragon.txt
     - name: List file content
