@@ -1,12 +1,12 @@
 name: First cicd workflow
 on: push
 jobs:
-  name: first job
-  runs-on: ubuntu-latest
-  steps:
-  - name: Display message
-    run: echo "welcome to github actions first cicd"
-  - name: list files
-    run: ls
-  - name: View the readme file
-    run: cat README.md
+  first job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Display message
+      run: echo "welcome to github actions first cicd"
+    - name: list files
+      run: ls
+    - name: View the readme file
+      run: cat README.md
