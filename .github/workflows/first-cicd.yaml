@@ -6,9 +6,10 @@ jobs:
     steps:
     - name: checkout repo
       uses: actions/checkout@v4
-    - name: Display message
-      run: echo "welcome to github actions first cicd"
-    - name: list files
-      run: ls
-    - name: View the readme file
-      run: cat README.md
+    - name: list files and read files
+      run: |
+          echo "welcome to github actions first cicd"
+          ls -lrt
+          head -10 README.md
+    - name: ASHI Generator
+      run: cowsay -f dog "I saw the cute dog" > dog.txt
