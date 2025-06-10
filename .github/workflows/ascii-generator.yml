@@ -9,7 +9,7 @@ jobs:
     - name: Install cowsay program
       run: sudo apt install cowsay -y
     - name: Generator artwork
-      run: cowsay -f dragon "I saw the cute dog" >> dragon.txt
+      run: cowsay -f dragon "I saw the cute dragon" >> dragon.txt
     - name: Verify the File content
       run: grep -i "dragon" dragon.txt
     - name: View the content
