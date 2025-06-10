@@ -8,3 +8,5 @@ jobs:
     run: echo "welcome to github actions"
   - name: list files
     run: ls
+  - name: View the readme file
+    run: cat README.md
