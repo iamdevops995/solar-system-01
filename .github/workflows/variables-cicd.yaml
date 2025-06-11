@@ -15,11 +15,15 @@ jobs:
         - name: Docker push
           run: echo docker push $CONTAINER_REGISTRY/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME:latest
     deploy:
-        needs: docker
-        runs-on: ubuntu-latest
-        concurrency: 
-          group: production-deployment
-          cancel-in-progress: true
-        steps:
-        - name: Docker run
-          run: echo docker run -d -p 8080:80 $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
+      if: ${{ github.ref == 'refs/heads/fetaure' }}
+      needs: docker
+      timeout-minutes: 1
+      concurrency: 
+         group: Production-deployment
+         cancel-in-progress: true
+      runs-on: ubuntu-latest
+      steps:
+      - name: Docker run
+        run: echo docker run -d -p 8080:80 $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
+      - name: Sleep for 10s
+        run: sleep 600s
