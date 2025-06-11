@@ -6,7 +6,7 @@ on:
       - opened
       - closed
     branches:
-      - '^feature/*'
+      - 'main'
     paths-ignore: 
       - README.md
 env:
