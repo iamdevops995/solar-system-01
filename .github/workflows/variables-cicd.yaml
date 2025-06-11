@@ -15,11 +15,7 @@ jobs:
         - name: Docker push
           run: echo docker push $CONTAINER_REGISTRY/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME:latest
     deploy:
-<<<<<<< HEAD
-      if: ${{ github.ref == 'refs/heads/fetaure' }}
-=======
       if: ${{ github.ref == 'refs/heads/main' }}
->>>>>>> ec55279 (added workflow dispactch inputs)
       needs: docker
       timeout-minutes: 1
       concurrency: 
@@ -30,8 +26,4 @@ jobs:
       - name: Docker run
         run: echo docker run -d -p 8080:80 $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
       - name: Sleep for 10s
-<<<<<<< HEAD
         run: sleep 600s
-=======
-        run: sleep 600s
->>>>>>> ec55279 (added workflow dispactch inputs)
