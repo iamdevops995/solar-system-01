@@ -41,11 +41,5 @@ jobs:
             - name: Run tests (if selected)
               if: ${{ inputs.run-tests == true }}
               run: echo "Testing..."
-<<<<<<< HEAD
-            # Deploy job
             # - name: Deploy to ${{ inputs.environment}}
             #   environment: ${{ inputs.environment }}
-=======
-            # - name: Deploy to ${{ inputs.environment}}
-            #   environment: ${{ inputs.environment }}
->>>>>>> ec55279 (added workflow dispactch inputs)
